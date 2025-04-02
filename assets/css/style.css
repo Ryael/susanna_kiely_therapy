@@ -118,6 +118,7 @@ a {
 }
 
 #navigation-bar.scroll {
+  padding: 15px;
   background: #fff;
   border-bottom: 1px solid var(--divider-color);
   transition: 0.5s ease-in-out;
