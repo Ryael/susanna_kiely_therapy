@@ -3,8 +3,11 @@
 /* 01. Fonts */
 /* 02. Global Variables */
 /* 03. Common Styles */
-/* 04. Navigation */
-/* 05. Hero Section */
+/* 04. Text */
+/* 05. Buttons */
+/* 06. Navigation */
+/* 07. Hero */
+/* 08. About */
 
 /* 01. Fonts */
 
@@ -75,7 +78,31 @@ a {
   justify-content: center;
 }
 
-/* 04. Navigation */
+/* 04. Text */
+
+.section-small-title {
+  display: inline-block;
+  position: relative;
+  font-family: var(--default-font);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.1em;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.section-description {
+  margin: 30px 0 0 0;
+}
+
+/* 05. Navigation */
 
 #navigation-bar {
   padding: 30px;
@@ -138,7 +165,7 @@ a {
   text-transform: none;
 }
 
-/* 05. Hero Section */
+/* 06. Hero Section */
 
 #hero {
   background-image: url("../img/hero/hero.jpg");
@@ -179,36 +206,15 @@ a {
   margin: auto;
 }
 
-#hero-small-title {
-  display: inline-block;
-  position: relative;
-  font-family: var(--default-font);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.1em;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--accent-color);
-  padding-left: 18px;
-  margin-bottom: 15px;
-}
-
-#hero-text #hero-small-title,
-#hero-text #hero-title,
-#hero-text #hero-description,
+#hero-text .section-small-title,
+#hero-text .section-title,
+#hero-text .section-description,
 #navigation-menu li {
   color: var(--white-color);
 }
 
-#hero-title {
+#hero-text .section-title {
   font-size: 70px;
-  font-weight: 400;
-  margin-bottom: 0;
-  cursor: none;
-}
-
-#hero-description {
-  margin: 30px 0 0 0;
 }
 
 #hero-button {
@@ -245,7 +251,7 @@ a {
   left: 0;
 }
 
-/* 06. Buttons */
+/* 07. Buttons */
 
 .dark-button {
   position: relative;
@@ -262,4 +268,113 @@ a {
   overflow: hidden;
   transition: all 0.6s ease-in-out;
   z-index: 1;
+}
+
+.dark-button:hover,
+.dark-button:focus {
+  color: #556662;
+  background: #d5d5d5;
+}
+
+/* 08. About */
+
+#about {
+  padding: 100px 0;
+}
+
+.two-column-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  just
+}
+
+#about-description .section-title {
+  font-size: 48px;
+}
+
+#about-description .section-small-title {
+  margin-bottom: 30px;
+}
+
+#about-list {
+  border-top: 1px solid var(--divider-color);
+  padding-top: 40px;
+}
+
+#about-description {
+  margin-bottom: 40px;
+}
+
+.about-list-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 35px;
+}
+
+.about-list-item::before {
+  content: '\f058';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--accent-color);
+  display: inline-block;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.about-list-item h3 {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.about-list-item p {
+  margin: 0;
+}
+
+#about-img {
+  width: 100%;
+  aspect-ratio: 1 / 0.6;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.column {
+  padding-right: 30px;
+}
+
+#about .column:last-child {
+  align-items: center;
+  padding-left: 30px;
+  flex-direction: column;
+}
+
+#about-me {
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+#about-me-content {
+  flex-direction: column;
+}
+
+#about-me-content p:last-child {
+  margin: 0;
+  font-family: var(--accent-font);
+  color: var(--primary-color);
+  font-size: 18px;
+}
+
+#about-me-img-container img {
+  width: 100%;
+  border-radius: 20px;
+  aspect-ratio: 1 / 0.999;
+  object-fit: cover;
 }
