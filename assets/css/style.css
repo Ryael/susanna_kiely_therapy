@@ -8,6 +8,8 @@
 /* 06. Navigation */
 /* 07. Hero */
 /* 08. About */
+/* 09. Services */
+/* 10. Contact */
 
 /* 01. Fonts */
 
@@ -78,6 +80,11 @@ a {
   justify-content: center;
 }
 
+#about,
+#contact {
+  padding: 100px 0;
+}
+
 /* 04. Text */
 
 .section-small-title {
@@ -100,6 +107,18 @@ a {
 
 .section-description {
   margin: 30px 0 0 0;
+}
+
+#about-description .section-title,
+#services .section-title,
+#contact .section-title {
+  font-size: 48px;
+}
+
+#services .two-column-grid,
+.contact-title,
+#about-description {
+  margin-bottom: 40px;
 }
 
 /* 05. Navigation */
@@ -305,18 +324,9 @@ a {
 
 /* 08. About */
 
-#about {
-  padding: 100px 0;
-}
-
 .two-column-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  just
-}
-
-#about-description .section-title {
-  font-size: 48px;
 }
 
 #about-description .section-small-title {
@@ -326,10 +336,6 @@ a {
 #about-list {
   border-top: 1px solid var(--divider-color);
   padding-top: 40px;
-}
-
-#about-description {
-  margin-bottom: 40px;
 }
 
 .about-list-item {
@@ -372,9 +378,10 @@ a {
   padding-right: 30px;
 }
 
-#about .column:last-child {
+#about .column:last-child,
+#contact .column:last-child {
   align-items: center;
-  padding-left: 30px;
+  padding: 0 0 0 30px;
   flex-direction: column;
 }
 
@@ -404,4 +411,157 @@ a {
   border-radius: 20px;
   aspect-ratio: 1 / 0.999;
   object-fit: cover;
+}
+
+/* 09. Services */
+
+#services {
+  background: var(--secondary-color);
+  padding: 100px 0;
+}
+
+#services-description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.three-column-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.three-column-grid h4 {
+  font-size: 20px;
+}
+
+.services-header {
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+}
+
+.services-icon {
+  position: relative;
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 20px;
+  transition: all 0.5s ease-in-out;
+}
+
+.services-icon img {
+  position: relative;
+  max-width: 24px;
+  z-index: 1;
+}
+
+/* 10. Contact */
+
+#contact-form {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--divider-color);
+  border-radius: 30px;
+  padding: 35px 50px;
+}
+
+.block {
+  font-size: 16px;
+  padding-bottom: 10px;
+  font-weight: 400;
+  display: block;
+  text-align: left;
+  margin: auto;
+}
+
+.text-form,
+.email-form,
+.message-form {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: var(--text-color);
+  background-color: var(--white-color);
+  border: 1px solid var(--divider-color);
+  border-radius: 10px;
+  padding: 17px 20px;
+  box-shadow: none;
+  outline: none;
+}
+
+#message {
+  font-size: 16px;
+  resize: vertical;
+}
+
+.text-form:focus,
+.email-form:focus,
+.message-form:focus {
+  color: #111;
+  border-color: #848484;
+  box-shadow: 0 0 3px #848484;
+  outline: 0;
+}
+
+.signup-form input {
+  margin-bottom: 15px;
+}
+
+.signup-form input:last-child {
+  margin-bottom: 0px;
+}
+
+.signup-form p {
+  margin: 1.6em 0;
+}
+
+#contact-info {
+  overflow: visible;
+  flex-direction: column;
+  row-gap: 30px;
+  width: 65%;
+}
+
+.contact-info-item {
+  border-bottom: 1px solid var(--divider-color);
+  padding: 0px 0px 30px 0px;
+  justify-content: flex-start;
+}
+
+.contact-info-item:last-child {
+  border-bottom: 0;
+}
+
+.social-icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.social-icon-box img {
+  width: 100%;
+  max-width: 25px;
+}
+
+.contact-item-info h4 {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.contact-item-info p {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.contact-info-item p a {
+  color: inherit;
+  transition: all 0.3s ease-in-out;
 }
