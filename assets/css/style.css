@@ -467,6 +467,25 @@ footer .column:last-child {
   transition: all 0.5s ease-in-out;
 }
 
+.services-header .services-icon:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #87b3a9;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transition: all 0.4s ease-in-out;
+  z-index: 0;
+}
+
+.services-header:hover .services-icon::before {
+  transform: scale(1);
+}
+
 .services-icon img {
   position: relative;
   max-width: 24px;
@@ -600,6 +619,6 @@ footer p {
 }
 
 footer img {
-  height: 55px;
+  height: 60px;
   margin-bottom: 20px;
 }
