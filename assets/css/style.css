@@ -569,12 +569,18 @@ footer .column:last-child {
   border-bottom: 0;
 }
 
+.contact-info-item:hover .social-icon-box {
+  background-color: #87b3a9;
+  border-radius: 50%;
+}
+
 .social-icon-box {
   width: 50px;
   height: 50px;
   background-color: var(--accent-color);
   border-radius: 50%;
   margin-right: 15px;
+  transition: all 0.5s ease-in-out;
 }
 
 .social-icon-box img {
@@ -596,6 +602,11 @@ footer .column:last-child {
 .contact-info-item p a {
   color: inherit;
   transition: all 0.3s ease-in-out;
+}
+
+.contact-info-item p a:hover,
+.contact-info-item p a:focus {
+  color: var(--primary-color);
 }
 
 #contact .dark-button {
