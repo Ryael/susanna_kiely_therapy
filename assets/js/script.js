@@ -1,12 +1,9 @@
 /* Constants & Configs */
 
 const myNav = document.querySelector("#navigation-bar");
-// const mobileNav = document.querySelector("#mobile-nav");
 const navMenu = document.querySelector("#navigation-menu");
-// const menuToggle = document.querySelector("#nav-toggle");
 const menuLinks = navMenu.querySelectorAll(".navigation-link");
-const whiteLogo = myNav.querySelector("#navigation-bar-logo-white");
-const blackLogo = myNav.querySelector("#navigation-bar-logo-black");
+const colourLogo = myNav.querySelector("#navigation-logo-colour");
 const logoContainer = myNav.querySelector("#logo");
 const activeNavLink = myNav.querySelector(".active");
 let isMenuOpen = false;
@@ -33,15 +30,13 @@ function setNavbarTransparency() {
 
 function setSolidNavbar() {
   myNav.classList.remove("scroll");
-  whiteLogo.classList.remove("transparent");
-  blackLogo.classList.add("transparent");
+  colourLogo.classList.remove("black");
   Array.from(menuLinks).forEach(menuLink => menuLink.classList.remove("black"));
 }
 
 function setTransparentNavbar() {
   myNav.classList.add("scroll");
-  whiteLogo.classList.add("transparent");
-  blackLogo.classList.remove("transparent");
+  colourLogo.classList.add("black");
   Array.from(menuLinks).forEach(menuLink => menuLink.classList.add("black"));
 }
 
@@ -79,3 +74,37 @@ function navHighlighter() {
     }
   });
 }
+
+/* Mobile Navigation */
+
+const app = (() => {
+  let body;
+  let menu;
+  let menuItems;
+  let menuLinks
+
+  const init = () => {
+    body = document.querySelector('body');
+    menu = document.querySelector('.mobile-button');
+    menuItems = document.querySelectorAll('.mobile-list-item');
+    menuLinks = document.querySelectorAll('.mobile-links');
+
+    applyListeners();
+  };
+
+  const applyListeners = () => {
+    menu.addEventListener('click', () => toggleClass(body, 'mobile-navigation-active'));
+    menuLinks.forEach(menuLink => {
+      menuLink.addEventListener('click', () => toggleClass(body, 'mobile-navigation-active'));
+    });
+  };
+
+  const toggleClass = (element, stringClass) => {
+    if(element.classList.contains(stringClass))
+      element.classList.remove(stringClass);
+    else
+      element.classList.add(stringClass);
+  };
+
+  init();
+})();
