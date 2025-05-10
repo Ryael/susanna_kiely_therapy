@@ -52,9 +52,17 @@
     <header>
       <nav id="navigation-bar" class="flex-center">
         <div id="navigation-logo" class="flex-center">
-          <a href="">
-            <img id="navigation-bar-logo-white" src="assets/img/logo/white_logo.png" alt="Susana Kiely's logo in white and green.">
-            <img id="navigation-bar-logo-black" src="assets/img/logo/black_logo.png" alt="Susana Kiely's logo in black and green.">
+          <a href="#hero">
+            <span>
+              <p>
+                Susanna
+              </p>
+            </span>
+            <span>
+              <p id="navigation-logo-colour">
+                Kiely
+              </p>
+            </span>
           </a>
         </div>
         <ul id="navigation-menu" class="flex-center">
@@ -73,6 +81,53 @@
           <a href="" class="dark-button">Book a Discovery Call</a>
         </ul>
       </nav>
+      <nav id="fullscreen-navigation">
+          <div id="mobile-button-container">
+            <a class="mobile-button" role="button" aria-expanded="false" aria-controls="mobile-nav">
+              <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                <title>Toggle Menu</title>
+                <g>
+                  <line class="menuicon-bar" x1="13" y1="16.5" x2="37" y2="16.5"></line>
+                  <line class="menuicon-bar" x1="13" y1="24.5" x2="37" y2="24.5"></line>
+                  <line class="menuicon-bar" x1="13" y1="24.5" x2="37" y2="24.5"></line>
+                  <line class="menuicon-bar" x1="13" y1="32.5" x2="37" y2="32.5"></line>
+                  <circle class="menuicon-circle" r="23" cx="25" cy="25"></circle>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <div class="mobile-logo">
+            <a href="#hero">
+              <span>
+                <p>
+                  Susanna
+                </p>
+              </span>
+              <span>
+                <p>
+                  Kiely
+                </p>
+              </span>
+            </a>
+          </div>
+          <div class="mobile-navigation">
+            <div class="mobile-content">
+              <ul class="mobile-list">
+                <li class="mobile-list-item">
+                  <a class="mobile-links" href="#hero">Home</a>
+                </li>
+                <li class="mobile-list-item">
+                  <a class="mobile-links" href="#about">About</a>
+                </li>
+                <li class="mobile-list-item">
+                  <a class="mobile-links" href="#services">Services</a>
+                </li>
+                <li class="mobile-list-item">
+                  <a class="mobile-links" href="#contact">Contact</a>
+              </ul>
+            </div>
+          </div>
+        </nav>
     </header>
     <!-- End Navigation Bar Section -->
 
@@ -93,18 +148,20 @@
             My Services
           </a>
         </div>
-        <div id="hero-list">
-          <ul class="flex-center">
-            <li>
-              Person-Centered Therapy
-            </li>
-            <li>
-              Cognitive Behavioural Therapy
-            </li>
-            <li>
-              Psychodynamic Therapy
-            </li>
-          </ul>
+        <div id="hero-list" class="flex-center">
+          <div class="border-container">
+            <ul class="flex-center">
+              <li>
+                Person-Centered Therapy
+              </li>
+              <li>
+                Cognitive Behavioural Therapy
+              </li>
+              <li>
+                Psychodynamic Therapy
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -161,7 +218,7 @@
           </div>
           <div class="column flex-center">
             <div id="about-me">
-              <div id="about-me-img-container" class="flex-center">
+              <div id="about-me-img-container">
                 <img src="assets/img/content/susanna.png">
               </div>
               <div id="about-me-content" class="flex-center">
@@ -383,6 +440,10 @@
       </div>
     </footer>
     <!-- End Footer -->
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <!-- End jQuery -->
 
     <!-- JavaScript -->
     <script src="assets/js/script.js"></script>
