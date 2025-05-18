@@ -81,7 +81,7 @@ const app = (() => {
   let body;
   let menu;
   let menuItems;
-  let menuLinks
+  let menuLinks;
 
   const init = () => {
     body = document.querySelector('body');
