@@ -12,8 +12,6 @@
 /* 10. Contact */
 /* 11. Footer */
 /* 12. Media Query */
-/*  12.1 Mobile Menu Queries */
-/*  12.2 General Queries */
 
 /* 01. Fonts */
 
@@ -76,7 +74,7 @@ a {
 
 .container {
   max-width: 1300px;
-  padding: 0 15px;
+  padding: 0 clamp(1.5rem, 6%, 3rem);
 }
 
 .flex-center {
@@ -98,6 +96,11 @@ a {
 
 .column {
   padding-right: 30px;
+}
+
+#about .column:last-child {
+  justify-content: flex-start;
+  margin-top: 50px;
 }
 
 #about .column:last-child,
@@ -136,7 +139,7 @@ footer .column:last-child {
 #about-description .section-title,
 #services .section-title,
 #contact .section-title {
-  font-size: 48px;
+  font-size: clamp(1.94rem, 1.47rem + 1.95vw, 3rem);
 }
 
 #services .two-column-grid,
@@ -321,6 +324,7 @@ footer .column:last-child {
 }
 
 .mobile-logo {
+  pointer-events: none;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -383,7 +387,8 @@ body.mobile-navigation-active .line-right {
   transform: translateX(-2px) rotate(45deg);
 }
 
-body.mobile-navigation-active .mobile-navigation {
+body.mobile-navigation-active .mobile-navigation,
+body.mobile-navigation-active .mobile-logo {
   visibility: visible;
   pointer-events: auto;
 }
@@ -517,7 +522,7 @@ body.mobile-navigation-active .mobile-list-item:nth-child(4) {
   position: relative;
   display: inline-block;
   text-transform: capitalize;
-  color: var(--white-color);
+  color: #d5d5d5;
   padding-left: 34px;
 }
 
@@ -526,12 +531,24 @@ body.mobile-navigation-active .mobile-list-item:nth-child(4) {
   font-family: 'Font Awesome 6 Free';
   font-weight: 400;
   font-size: 20px;
-  color: var(--white-color);
+  color: #d5d5d5;
   display: inline-block;
   line-height: normal;
   position: absolute;
   top: 2px;
   left: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#hero-list a {
+  color: #d5d5d5;
+  transition: all 0.5s ease-in-out;
+}
+
+#hero-list a:hover,
+#hero-list ul li:hover:before  {
+  color: var(--white-color);
+  transition: all 0.5s ease-in-out;
 }
 
 /* 07. Buttons */
@@ -640,6 +657,10 @@ body.mobile-navigation-active .mobile-list-item:nth-child(4) {
   border-radius: 20px;
 }
 
+#about-me-img-container p {
+  display: none;
+}
+
 /* 09. Services */
 
 #services {
@@ -702,6 +723,18 @@ body.mobile-navigation-active .mobile-list-item:nth-child(4) {
 
 .services-header:hover .services-icon::before {
   transform: scale(1);
+}
+
+#services .column p:last-child {
+  margin: 0;
+}
+
+#services .three-column-grid .column:last-child {
+  margin-bottom: 0;
+}
+
+#services .three-column-grid .column {
+  margin-bottom: 40px;
 }
 
 .services-icon img {
@@ -831,6 +864,10 @@ body.mobile-navigation-active .mobile-list-item:nth-child(4) {
   cursor: pointer;
 }
 
+#contact .column:last-child {
+  margin-top: 37px;
+}
+
 /* 11. Footer */
 
 footer {
@@ -864,7 +901,35 @@ footer img {
 
 /* 12. Media Query */
 
-/*  12.1 Mobile Menu Queries */
+@media screen and (min-width:1075px) and (max-width:1283px) {
+
+  .services-icon {
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .three-column-grid h4 {
+    font-size: 18px;
+  }
+
+  .services-icon img {
+    max-width: 21px;
+  }
+
+  #services .column {
+    padding-right: 20px;
+  }
+
+  #services .three-column-grid .column:nth-child(2) {
+    padding: 0 20px;
+  }
+
+  #services .column:last-child {
+    padding: 0 0 0 20px;
+  }
+
+}
 
 @media (max-width: 1075px) {
 
@@ -946,38 +1011,76 @@ footer img {
     transform: rotate(-45deg);
   }
 
-}
-
-/*@media (max-width: 1350px) {
-
-  .border-container {
-  width: 80%;
+  .two-column-grid,
+  .three-column-grid {
+    grid-template-columns: 1fr;
   }
 
-}
-
-@media (max-width: 910px) {
-
-  #hero-list ul {
-    flex-direction: column;
-    gap: 40px;
-    font-size: 15px;
-  }
-}
-
-
-@media (max-width: 600px) {
-
-  #hero {
+  .column,
+  #about .column:last-child,
+  #contact .column:last-child,
+  #services .column:last-child,
+  #services .three-column-grid .column:nth-child(2) {
+    margin-top: 0;
     padding: 0;
   }
 
-  #hero-text {
+  #about, #contact, #services {
+    scroll-margin-top: 0px;
+  }
+
+  #contact-info {
+    width: 100%;
+  }
+
+  .contact-info-item:last-child {
+    padding: 0 0 40px 0;
+  }
+
+}
+
+@media (max-width: 798px) {
+
+  #hero-list ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+}
+
+@media (max-width: 545px) {
+
+  #about-me {
+    flex-direction: column;
+  }
+
+  #about-me-img-container p {
+    display: flex;
     margin: 0;
+    font-family: var(--accent-font);
+    color: var(--primary-color);
+    font-size: 18px;
+  }
+
+  #about-me-img-container {
+    display: flex;
+    gap: 30px;
+  }
+
+  #about-me-content p:last-child {
+    display: none;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  #hero {
+    padding: 0;
   }
 
   #hero-list {
     display: none;
   }
 
-}*/
+}
