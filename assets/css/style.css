@@ -894,7 +894,12 @@ footer p {
   letter-spacing: 0.5px;
 }
 
-footer img {
+footer img:first-child {
+  height: 110px;
+  margin-bottom: 20px;
+}
+
+footer img:last-child {
   height: 50px;
   margin-bottom: 20px;
 }
